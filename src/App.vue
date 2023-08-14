@@ -1,16 +1,21 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <FormComponent />
+  <!-- <FormComponent /> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+  <Greet name="Bruce" />
+  <Greet name="Clark" />
+  <Greet name="Diana" />
 </template>
 
 <script>
-import FormComponent from './components/FormComponent.vue';
+// import FormComponent from './components/FormComponent.vue';
+import Greet from './components/Greet.vue';
 
 export default {
   name: 'App',
   components: {
-    FormComponent
+    // FormComponent
+    Greet
   }
 }
 </script>

@@ -180,6 +180,11 @@
   <div>Volume: {{ volume }}</div>
   <button @click="volume += 1">increment volume</button>
   <button @click="volume -= 1">decrement volume</button>
+  <input type="text" v-model="movie" >
+  <input type="text" v-model="movieInfo.name">
+  <input type="text" v-model="movieInfo.description">
+
+  <button @click="movieList = movieList.concat(movie)">add movie</button>
 </template>
 
 <script>
@@ -258,8 +263,15 @@ export default {
             price: 300
         }
       ],
-      volume: 0
+      volume: 0,
+      movie: "",
+      movieInfo: {
+        name: "",
+        description: ""
+      },
+      movieList: []
     };
+    
   },
   methods: {
     add() {
@@ -304,7 +316,31 @@ export default {
         if(newValue > oldValue && newValue == 16){
             alert("too high");
         }
+    },
+    movie(newValue){
+        console.log(newValue)
+    },
+    movieInfo: {
+        handler(newValue){
+          console.log(`movename = ${newValue.name}, description= ${newValue.description}`)
+        },
+        deep: true,
+        immediate: true
+    },
+    movieList: {
+        handler(newValue){
+            console.log(`movename = ${newValue[newValue.length-1]} added in movieList`)
+            newValue.map((x, i)=>{
+                console.log(x, i);
+            })
+            
+            },
+            
+            deep: true
+        
     }
+    
+
   }
 }
 </script>
