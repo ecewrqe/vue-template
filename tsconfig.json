@@ -1,0 +1,26 @@
+{
+    "include": ["src/**/*"],
+    "exclude": [
+        "build"
+    ],
+    "compilerOptions": {
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "module": "ESNext",
+        "strict": true,
+        "baseUrl": "./",
+        "moduleResolution": "node",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
+        "lib": [
+            "esnext",
+            "dom",
+            "dom.iterable",
+            "scripthost"
+        ]
+
+    }
+}

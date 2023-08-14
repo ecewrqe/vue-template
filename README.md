@@ -1,4 +1,4 @@
-# bekazone-template-vue
+# vue-template-2
 
 ## Project setup
 ```

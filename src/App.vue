@@ -1,10 +1,5 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <!-- <FormComponent /> -->
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <Greet name="Bruce" />
-  <Greet name="Clark" />
-  <Greet name="Diana" />
   <button class="btn btn-primary">button</button>
   <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -15,18 +10,22 @@
     <li><a class="dropdown-item" href="#">Another action</a></li>
     <li><a class="dropdown-item" href="#">Something else here</a></li>
   </ul>
+  <InjCompoC />
 </div>
+  <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
-// import FormComponent from './components/FormComponent.vue';
-import Greet from './components/Greet.vue';
-
+import HelloWorld from './components/HelloWorld.vue'
+import InjCompoC from './components/InjCompC.vue'
 export default {
   name: 'App',
   components: {
-    // FormComponent
-    Greet
+    HelloWorld,
+    InjCompoC
+  },
+  provide: {
+    username: "washRoom"
   }
 }
 </script>

@@ -13,7 +13,7 @@
   <!-- {
     promoted: isPromoted,
     new: !isSoldout,
-    'sold-out': 
+    'sold-out':
 
   } -->
   <h2
@@ -189,7 +189,7 @@
 
 <script>
 export default {
-    name: 'FormComponent',
+    name: "FormComponent",
     data() {
     return {
       name: "Vishwas",
@@ -249,17 +249,17 @@ export default {
       items: [
         {
             id: 1,
-            title: 'TV',
+            title: "TV",
             price: 100
         },
         {
             id: 2,
-            title: 'PHONE',
+            title: "PHONE",
             price: 200
         },
         {
             id: 3,
-            title: 'LAPTOP',
+            title: "LAPTOP",
             price: 300
         }
       ],
@@ -271,7 +271,7 @@ export default {
       },
       movieList: []
     };
-    
+
   },
   methods: {
     add() {
@@ -290,20 +290,20 @@ export default {
     changeName(event) {
       this.name = "logust";
       console.log(event);
-      
+
     },
     submitForm(event){
-        event.preventDefault()
-        console.log(JSON.stringify(this.formValue, null, 2))
+        event.preventDefault();
+        console.log(JSON.stringify(this.formValue, null, 2));
         // ajax
     },
     incrementPHONEPrice(){
-        this.items[1].price ++
+        this.items[1].price++;
     }
   },
   computed: {
     composeName(){
-        return `{}`
+        return `{}`;
     },
     computedTotal(){
         var total = this.items.reduce((total, curr) => (total = total + curr.price), 0);
@@ -318,29 +318,29 @@ export default {
         }
     },
     movie(newValue){
-        console.log(newValue)
+        console.log(newValue);
     },
     movieInfo: {
         handler(newValue){
-          console.log(`movename = ${newValue.name}, description= ${newValue.description}`)
+          console.log(`movename = ${newValue.name}, description= ${newValue.description}`);
         },
         deep: true,
         immediate: true
     },
     movieList: {
         handler(newValue){
-            console.log(`movename = ${newValue[newValue.length-1]} added in movieList`)
+            console.log(`movename = ${newValue[newValue.length - 1]} added in movieList`);
             newValue.map((x, i)=>{
                 console.log(x, i);
-            })
-            
+            });
+
             },
-            
+
             deep: true
-        
+
     }
-    
+
 
   }
-}
+};
 </script>
