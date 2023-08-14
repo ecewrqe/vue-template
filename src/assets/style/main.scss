@@ -1,0 +1,46 @@
+
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+$custom-control-indicator-size: 1rem;
+$custom-control-indicator-bg-size: 50%;
+$custom-control-gutter: 0.5rem;
+$custom-radio-indicator-border-radius: 50%;
+$custom-control-indicator-border-width: 1px;
+$input-line-height-lg: $line-height-lg;
+$input-line-height-sm: $line-height-sm;
+$table-dark-hover-bg: rgba($white, 0.075);
+$toast-background-color: rgb(255, 255, 255);
+$alert-bg-level: -10;
+$alert-border-level: -9;
+$alert-color-level: 6;
+$enable-pointer-cursor-for-buttons: true;
+$card-inner-border-radius: subtract($card-border-radius, $card-border-width);
+@mixin border-left-radius($border-radius){
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+}
+@mixin border-right-radius($border-radius){
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+}
+
+@function theme-color($key: "primary") {
+    @return map-get($theme-colors, $key);
+  }
+
+$theme-color-interval:8%;
+@function theme-color-level($color-name: "primary", $level: 0) {
+    $color: theme-color($color-name);
+    $color-base: if($level > 0, #000, #fff);
+    $level: abs($level);
+  
+    @return mix($color-base, $color, $level * $theme-color-interval);
+  }
+$table-dark-color: $white;
+$table-dark-hover-color:$table-dark-color;
+$table-dark-bg:$gray-800;
+
+$table-dark-accent-bg:rgba($white, 0.05);
+$table-cell-padding:0.75rem;
+$table-cell-padding-sm: 0.3rem;
+$table-border-width: 1px;
+@import '../../../node_modules/bootstrap-vue/src/index.scss';
